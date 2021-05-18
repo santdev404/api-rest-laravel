@@ -7,14 +7,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Post;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
-
+    
     public function posts(){
 
-        return $this->hasMany('App\Post');
+        return $this->hasMany(Post::class);
 
     }
 

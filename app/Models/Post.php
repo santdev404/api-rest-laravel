@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Post;
+
 class Post extends Model
 {
     use HasFactory;
 
-
-    protected $table = 'posts';
-
     public function user(){
-        $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function category(){
-        $this->belongsTo('App\Category', 'category_id');
+        return $this->belongsTo(Category::class);
     }
 
 
